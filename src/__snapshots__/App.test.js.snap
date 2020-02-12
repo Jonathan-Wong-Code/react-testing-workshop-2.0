@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders 1`] = `
+.c0 {
+  font-size: 20px;
+}
+
+.c0:hover {
+  color: red;
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    font-size: 36px;
+  }
+}
+
+<div>
+  <div
+    class="App"
+    data-testid="app-container"
+  >
+    <h1
+      class="c0"
+      data-testid="header"
+    >
+      Pokemon Searcher!
+    </h1>
+    <form
+      action=""
+    >
+      <label
+        for="pokemon-name"
+      >
+        Enter pokemon name:
+      </label>
+      <input
+        id="pokemon-name"
+        type="text"
+        value=""
+      />
+      <button
+        disabled=""
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+    
+  </div>
+</div>
+`;
