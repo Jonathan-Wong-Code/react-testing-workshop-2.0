@@ -49,7 +49,7 @@ describe("<App />", () => {
     const input = getByLabelText("Enter pokemon name:");
     const button = getByText("Search");
 
-    expect(button).toBeDisabled(); // Get attribute to assert any normal HTML attribute.
+    expect(button).toBeDisabled(); // Assert button is disabled.
 
     fireEvent.change(input, { target: { value: "Pikachu" } }); // We use fireEvent to sim events. User enters query
 
@@ -81,7 +81,7 @@ describe("<App />", () => {
       expect(queryByTestId("error")).toBeNull(); // Assert the error message does not render
 
       expect(input).toHaveValue(""); // Input clears on search.
-      expect(button).toHaveAttribute("disabled"); // Button is disabled. Can also use toHaveAttribute if we want.
+      expect(button).toHaveAttribute("disabled"); // We can use toHaveAttribute to assert the value of any valid HTML attribute
 
       expect(image).toHaveAttribute("src", response.data.sprites.front_default); // Assert correct image src just for fun.
       // I normally would be happy just with result rendering but more practise!
