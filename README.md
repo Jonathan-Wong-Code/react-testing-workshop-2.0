@@ -16,12 +16,16 @@ getBy queries return the first matching node for a query, and throw an error if 
 
 queryBy queries return the first matching node for a query, and return null if no elements match. This is useful for asserting an element that is not present. This throws if more than one match is found (use queryAllBy instead).
 
-If you were doing this without existing test scritps you'd want to use:
+If you were doing this without existing test scripts you'd want to use:
 
-npm install jest npm install @testing-library/react
-npm install @testing-library/jest-dom/extend-expect
-npm install jest-styled-components
+### npm install jest
+
+### npm install @testing-library/react
+
+### npm install @testing-library/jest-dom/extend-expect
+
+### npm install jest-styled-components
 
 In your package you'd create scripts that look like this:
 
-"scripts": { "test": "jest", "test:watch":"jest --watch" }
+"scripts": { "test": "jest", "test:watch":"jest --watchAll" }
