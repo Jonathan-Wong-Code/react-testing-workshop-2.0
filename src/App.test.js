@@ -38,6 +38,8 @@ describe("<App />", () => {
 
     expect(header.textContent).toBe("Pokemon Searcher!"); // Better for an exact match.
 
+    // We can use not to assert something that is opposite.
+    // to NOT haveTextContent in this case.
     expect(header).not.toHaveTextContent("It's a turtle!");
   });
 
@@ -79,7 +81,7 @@ describe("<App />", () => {
       expect(queryByTestId("error")).toBeNull(); // Assert the error message does not render
 
       expect(input).toHaveValue(""); // Input clears on search.
-      expect(button).toHaveAttribute("disabled"); // Button is disabled.
+      expect(button).toHaveAttribute("disabled"); // Button is disabled. Can also use toHaveAttribute if we want.
 
       expect(image).toHaveAttribute("src", response.data.sprites.front_default); // Assert correct image src just for fun.
       // I normally would be happy just with result rendering but more practise!
