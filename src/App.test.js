@@ -47,12 +47,12 @@ describe("<App />", () => {
     const input = getByLabelText("Enter pokemon name:");
     const button = getByText("Search");
 
-    expect(button).toHaveAttribute("disabled"); // Get attribute to assert any normal HTML attribute.
+    expect(button).toBeDisabled(); // Get attribute to assert any normal HTML attribute.
 
-    fireEvent.change(input, { target: { value: "Pikachu" } }); // We use fireEvent to sim events.
+    fireEvent.change(input, { target: { value: "Pikachu" } }); // We use fireEvent to sim events. User enters query
 
     expect(input).toHaveValue("Pikachu"); // To have value asserts values on inputs.
-    expect(button).not.toHaveAttribute("disabled");
+    expect(button).toBeEnabled(); // Button is Enabled.
   });
 
   it("Searches successfully when the user searches.", async () => {
