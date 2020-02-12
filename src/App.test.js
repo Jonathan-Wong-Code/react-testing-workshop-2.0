@@ -71,12 +71,16 @@ describe("<App />", () => {
     fireEvent.change(input, { target: { value: "Pikachu" } });
 
     fireEvent.click(button); // Simualte the search button being clicked.
-
     await wait(() => {
       // use await wait to let the asynchronicity play out.
       const image = getByAltText("Pikachu");
+
       expect(getByTestId("result")).toBeDefined(); // Assert the result renders
       expect(queryByTestId("error")).toBeNull(); // Assert the error message does not render
+
+      expect(input).toHaveValue(""); // Input clears on search.
+      expect(button).toHaveAttribute("disabled"); // Button is disabled.
+
       expect(image).toHaveAttribute("src", response.data.sprites.front_default); // Assert correct image src just for fun.
       // I normally would be happy just with result rendering but more practise!
     });
