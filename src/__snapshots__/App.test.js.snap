@@ -16,37 +16,46 @@ exports[`<App /> renders 1`] = `
 }
 
 <div>
-  <div
-    class="App"
-    data-testid="app-container"
-  >
-    <h1
-      class="c0"
-      data-testid="header"
+  <main>
+    <div
+      class="App"
+      data-testid="app-container"
     >
-      Pokemon Searcher!
-    </h1>
-    <form
-      action=""
-    >
-      <label
-        for="pokemon-name"
+      <h1
+        class="c0"
+        data-testid="header"
       >
-        Enter pokemon name:
-      </label>
-      <input
-        id="pokemon-name"
-        type="text"
-        value=""
-      />
+        Pokemon Searcher!
+      </h1>
+      <form
+        action=""
+      >
+        <label
+          for="pokemon-name"
+        >
+          Enter pokemon name:
+        </label>
+        <input
+          id="pokemon-name"
+          type="text"
+          value=""
+        />
+        <button
+          disabled=""
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+      
+    </div>
+    <div>
       <button
-        disabled=""
-        type="submit"
+        data-testid="hello-button"
       >
-        Search
+        Say Hello
       </button>
-    </form>
-    
-  </div>
+    </div>
+  </main>
 </div>
 `;

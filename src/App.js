@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import SayHello from "./components/SayHello";
 
 const H1 = styled.h1`
   font-size: 20px;
@@ -40,29 +41,34 @@ function App() {
     setState({ query: "" });
   };
 
+  const sayHello = () => console.log(`hello`);
+
   return (
-    <div className="App" data-testid="app-container">
-      <H1 data-testid="header">Pokemon Searcher!</H1>
-      <form action="" onSubmit={onSubmit}>
-        <label htmlFor="pokemon-name">Enter pokemon name:</label>
-        <input
-          type="text"
-          value={query}
-          id="pokemon-name"
-          onChange={e => setState({ query: e.target.value })}
-        />
-        <button type="submit" disabled={!query}>
-          Search
-        </button>
-      </form>
-      {currentPokemon && (
-        <div data-testid="result">
-          <h3>{currentPokemon.name}</h3>
-          <img src={currentPokemon.image} alt={currentPokemon.name} />
-        </div>
-      )}
-      {error && <p data-testid="error">{error}</p>}
-    </div>
+    <main>
+      <div className="App" data-testid="app-container">
+        <H1 data-testid="header">Pokemon Searcher!</H1>
+        <form action="" onSubmit={onSubmit}>
+          <label htmlFor="pokemon-name">Enter pokemon name:</label>
+          <input
+            type="text"
+            value={query}
+            id="pokemon-name"
+            onChange={e => setState({ query: e.target.value })}
+          />
+          <button type="submit" disabled={!query}>
+            Search
+          </button>
+        </form>
+        {currentPokemon && (
+          <div data-testid="result">
+            <h3>{currentPokemon.name}</h3>
+            <img src={currentPokemon.image} alt={currentPokemon.name} />
+          </div>
+        )}
+        {error && <p data-testid="error">{error}</p>}
+      </div>
+      <SayHello sayHello={sayHello} />
+    </main>
   );
 }
 
